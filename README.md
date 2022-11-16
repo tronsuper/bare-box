@@ -38,7 +38,7 @@ tronbox init
 
 ### Configure Network Information for TronBox
 
-To use TronBox, your dApp has to have a network configuration file `tronbox.js` in the source root. This special file tells TronBox how to connect to nodes, event server, and passes some special parameters, like the default private key. An example of `tronbox.js` can be found [here](https://github.com/Tronbox-boxes/bare-box/blob/master/tronbox.js). 
+To use TronBox, your dApp has to have a network configuration file `tronbox.js` in the source root. This special file tells TronBox how to connect to nodes, event server, and passes some special parameters, like the default private key. An example of `tronbox.js` can be found [here](https://github.com/Tronbox-boxes/bare-box/blob/master/tronbox.js).
 
 If you are connecting to **different** hosts for fullnode, solidity node, and event server, you may set `fullNode`, `solidityNode` and `eventServer` respectively:
 
@@ -86,13 +86,13 @@ module.exports = {
 
 `tronbox migrate` by default will use the `development` network. In order to test the smart contracts and deploy them locally, you must deploy a local fullnode with [Tron Quickstart](https://github.com/TRON-US/docker-tron-quickstart) or [java-tron](https://github.com/tronprotocol/java-tron).
 
-**Tron Quickstart** (https://github.com/TRON-US/docker-tron-quickstart) 
+**TronBox Runtime Environment** (https://hub.docker.com/r/tronbox/tre)
 
 1. [Install Docker](https://docs.docker.com/install/).
-2. Deploy Tron Quickstart:
+2. Run TronBox Runtime Environment:
 
 ```
-docker run -it --rm -p 9090:9090 --name tron trontools/quickstart
+docker run -it --rm -p 9090:9090 --name tron tronbox/tre
 ```
 
 **java-tron** (https://github.com/tronprotocol/java-tron)
@@ -127,21 +127,21 @@ There are 2 testnet in Tron: [Shasta](https://www.trongrid.io/shasta/) & [Nile](
 2. If you don't have a Tron wallet, install the Chrome Extension version of TronLink from https://www.tronlink.org/ and create an account.
 3. Click the TronLink extension, click on Settings -> Node Manage -> select Shasta / Nile testnet.
 4. If you don't have any testnet TRX, request some testnet TRX at:
-   - Shasta https://www.trongrid.io/faucet 
-   - Nile https://nileex.io/join/getJoinPage 
+   - Shasta https://www.trongrid.io/faucet
+   - Nile https://nileex.io/join/getJoinPage
 5. Create a file called `.env` in the root of this repo and edit it, adding a line with your Private Key like:
 
 ```
-export PRIVATE_KEY_SHASTA=0122194812081292938435739857438538457349573485358345345934583554
+export PRIVATE_KEY_SHASTA=0000000000000000000000000000000000000000000000000000000000000001
 ```
 
 ```
-export PRIVATE_KEY_NILE=0122194812081292938435739857438538457349573485358345345934583554
+export PRIVATE_KEY_NILE=0000000000000000000000000000000000000000000000000000000000000001
 ```
 
 You can find an example in `sample-env` [here](https://github.com/Tronbox-boxes/bare-box/blob/master/sample-env).
 
-6. Setup the dApp. The dApp needs to know the address where the contract has been deployed. 
+6. Setup the dApp. The dApp needs to know the address where the contract has been deployed.
 
 ```
 source .env && tronbox migrate --reset --network <shasta|nile>
