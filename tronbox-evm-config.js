@@ -32,7 +32,6 @@ Then, run the migration with:
     solc: {
       version: '0.8.7',
       settings: {
-        viaIR: true
         // optimizer: {
         //   enabled: true,
         //   runs: 200
