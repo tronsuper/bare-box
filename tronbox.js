@@ -54,6 +54,7 @@ Then, run the migration with:
   //     enabled: true,
   //     runs: 200
   //   },
-  //   evmVersion: 'istanbul'
+  //   evmVersion: 'istanbul',
+  //   viaIR: true,
   }
 }
